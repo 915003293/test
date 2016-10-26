@@ -1,0 +1,93 @@
+*{
+	padding:0px;
+	margin:0px;
+}
+a{
+	text-decoration:none;
+}
+ul {
+	list-style:none;
+}
+body{
+	color: #333;
+    font: 12px/1.5 Tahoma;
+	background: #f1f5f8;
+}
+#header {
+	display: block;
+    width: 100%;
+	height:100px;
+    background: #0078d8 url(headbg.png) center top repeat;
+	min-width:960px;
+	font-size:16px;
+	font-family:微軟雅黑;
+	color:#fff;
+}
+
+.wrap{
+	width:960px;
+	margin:auto;
+}
+#header  .wrap.add{
+	padding-top:20px;
+	height:100px;
+}
+#header  .wrap img{
+	float:left;
+	margin-right:100px;
+}
+#header  .wrap .nav1 li{
+	float:left;
+	min-width:100px;
+	height:100px;
+	margin-top:-20px;
+	line-height:80px;
+	text-align:center;
+}
+#header  .wrap .nav1 li a{
+	color:#fff;
+	display:block;
+	width:100%;
+	height:100%;
+	padding:0px 10px;
+}
+#header  .wrap .nav1 li .hover{
+	background-image:url('nav_hover.png');
+}
+#header  .wrap .right{
+	float:right;
+	margin-right:10px;
+	line-height:50px;
+}
+#header  .wrap .right a{
+	color:#fff;
+}
+#main {
+	margin-top:5px;
+}
+.box{
+	margin-top:10px;
+}
+.box>.title{
+	background: #f7f7f7;
+    border: 1px solid #e8e8e8;
+	font-size: 12px;
+    padding: 7px 10px;
+
+}
+.box .content {
+	background-color:#fff;
+    padding: 7px 10px;
+	min-height:20px;
+	overflow:hidden;
+	color:#333;
+}
+
+#footer{
+	margin-top:10px;
+	padding-top:15px;
+	text-align:center;
+	border-top:1px solid #ccc;
+	margin-bottom:10px;
+}
+

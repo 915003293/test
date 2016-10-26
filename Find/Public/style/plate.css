@@ -1,0 +1,260 @@
+*{
+	padding:0px;
+	margin:0px;
+}
+a{
+	text-decoration:none;
+}
+ul {
+	list-style:none;
+}
+body{
+	color: #333;
+    font: 12px/1.5 Tahoma;
+	background: #f1f5f8;
+}
+#header {
+	display: block;
+    width: 100%;
+	height:100px;
+    background: #0078d8 url(headbg.png) center top repeat;
+	min-width:960px;
+	font-size:16px;
+	font-family:微軟雅黑;
+	color:#fff;
+}
+
+.wrap{
+	width:960px;
+	margin:auto;
+}
+#header  .wrap.add{
+	padding-top:20px;
+	height:100px;
+}
+#header  .wrap img{
+	float:left;
+	margin-right:100px;
+}
+#header  .wrap .nav1 li{
+	float:left;
+	min-width:100px;
+	height:100px;
+	margin-top:-20px;
+	line-height:80px;
+	text-align:center;
+}
+#header  .wrap .nav1 li a{
+	color:#fff;
+	display:block;
+	width:100%;
+	height:100%;
+	padding:0px 10px;
+}
+#header  .wrap .nav1 li .hover{
+	background-image:url('nav_hover.png');
+}
+#header  .wrap .right{
+	float:right;
+	margin-right:10px;
+	line-height:50px;
+}
+#header  .wrap .right a{
+	color:#fff;
+}
+#main {
+	margin-top:5px;
+}
+.box{
+	margin-top:10px;
+}
+.box>.title{
+	background: #f7f7f7;
+    border: 1px solid #e8e8e8;
+	font-size: 12px;
+    padding: 7px 10px;
+
+}
+.box .content {
+	background-color:#fff;
+    padding: 7px 10px;
+	min-height:20px;
+	overflow:hidden;
+	color:#333;
+}
+.box .content a{
+	color:#000;
+}
+#position{
+	position:relative;
+	top:3px;
+	margin-right:5px;
+}
+#main .block {
+	overflow:hidden;
+	margin-top:10px;
+	
+}
+#main .block>.left{
+	float:left;
+	width:700px;
+	margin-right:10px;
+	min-height:880px;
+	padding:10px;
+	background-color:#fff;
+}
+#main .block .left .list .left{
+	width:525px;
+	height:100%;
+	float:left;
+	margin-top:-8px;
+}
+#main .block .left .list .right>div{
+	float:left;
+	width:50px;
+	height:40%;
+	margin-right:15px;
+	margin-top:0px;
+	background-color:#f4f4f4;
+	padding:12px 10px;
+	line-height:15px;
+    text-align: center;
+    color: #999;
+	position:relative;
+	
+}
+#main .block .left .list .left1{
+	float:left;
+	margin-right:5px;
+}
+#main .block .left .list .left1 img{
+	position:relative;
+	top:10px;
+}
+#main .block .left .right1 .top1{
+
+	font-size:17px;
+	font-weight: bold;
+
+}
+#main .block .left .right1 .mid1 {
+	margin-top:5px;
+	margin-left:63px;
+	color: #999;
+	margin-bottom:10px;
+}
+#main .block .left .right1 .top1 a{
+		color:#999;
+}
+#main .block .left .right1 .top1 img{
+	position:relative;
+	top:10px;
+}
+#main .block .left .list .right{
+
+}
+#main .block .left .list>.right{
+	width:172px;
+	height:100%;
+	float:right;
+
+}
+#main .block .left .list li{
+	margin-top:5px;
+	height:50px;
+	border-bottom:1px dashed #ccc;
+	padding-top:5px;
+	padding-bottom:10px;
+}
+ .post{
+	border:none;
+	width:100px;
+	height:30px;
+	color:#fff;
+	font-size:17px;
+	z-index:2;
+	cursor:pointer;
+	background-color: #128def;
+    text-decoration: none;
+	position:relative;
+	top:46px;
+}
+#main .block .left .top{
+	padding:5px;
+	margin-bottom:10px;
+	border-bottom:1px solid #ccc;
+		overflow:hidden;
+}
+#main .block .left .top>.title{
+	font-weight: bold;
+	margin-right:5px;
+	font-size:16px;
+    color: rgb(0, 0, 255);
+}
+#main .block .left .top .b{
+	color:red;
+}
+
+.b{
+	font-weight: bold;
+	margin-right:5px;
+}
+#main .block>.right{
+	float:left;
+	width:210px;
+	min-height:880px;
+	padding:10px;
+	background-color:#fff;
+}
+#main .block>.right .title{
+	text-align:center;
+	font-weight: bold;
+	padding-bottom:5px;
+	border-bottom:1px solid #ccc;
+}
+#main .block .right  a{
+	color:#000;
+}
+.sub{
+	margin-left:20px;
+}
+.sub1{
+	font-size:18px;
+}
+.hr{
+	margin-top:5px;
+	width:100%;
+	border-bottom:1px dashed #ccc;
+}
+#footer{
+	margin-top:10px;
+	padding-top:15px;
+	text-align:center;
+	border-top:1px solid #ccc;
+	margin-bottom:10px;
+}
+.plate {
+	background: #fbfbfb;
+}
+.plate>div{
+	float:left;
+	width:300px;
+	margin-right:10px;
+}
+.plate>div .left{
+	float:left;
+	width:27px;
+	height:50px;
+	padding-top:5px;
+	margin-right:20px;
+}
+.plate>div .left img {
+	position:relative;
+	top:10px;
+}
+.plate>div .right {
+	margin-bottom:10px;
+}
+.plate>div .right .title{
+	font-size:16px;
+}

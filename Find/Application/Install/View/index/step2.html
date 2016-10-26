@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="__PUBLIC__/Install/css/uikit.min.css" />
+        <script src="__PUBLIC__/Install/js/jquery.js"></script>
+        <script src="__PUBLIC__/Install/js/uikit.min.js"></script>
+    </head>
+    <body>
+		<nav style='padding:10px;' class="uk-navbar">
+			<ul class="uk-navbar-nav uk-grid-small">
+				<li class="uk-active "><button class='uk-button uk-button-large' >安装协议</button></li>
+				<li class="uk-active "><button class='uk-button uk-button-primary uk-button-large' >环境检测</button></li>
+				<li class="uk-active "><button class='uk-button uk-button-large' >站点信息设置</button></li>
+				<li class="uk-active "><button class='uk-button uk-button-large' >安装</button></li>
+			</ul>
+		</nav>
+		<div style="height:915px;background-position:center; background-image:url('http://pic.3h3.com/up/2015-1/20151117170929141600.jpg');   background-size: cover; width:100%">
+			<div style='color:#fff; padding:10px;' class='uk-width-1-2 uk-container-center'>
+				<div class='uk-h1' style='margin-bottom:20px;'>环境检测</div>
+				<div class='uk-h3'>运行环境检测</div>
+				<table class="uk-table ">
+					<tr style='font-weight: bold;'>
+						<td>
+							项目
+						</td>
+						<td>
+							所需配置
+						</td>
+						<td>
+							当前配置
+						</td>
+					</tr>
+					<volist name="data1" id="vo">
+						<tr>
+							<td>
+								{$vo.name}
+							</td>
+							<td>
+								{$vo.need}
+							</td>
+							<td>
+								<if condition="$vo.ok eq true " >
+									<img style='position:relative; top:-1px;' src='__PUBLIC__/Install/inco/G.png' />
+								<else/>
+									<img style='position:relative; top:-1px;' src='__PUBLIC__/Install/inco/X.png' />
+								</if>
+								
+								{$vo.now}
+							</td>
+							
+						</tr>
+					</volist>
+				</table>
+				<div class='uk-h3'>目录读写权限</div>
+				<table class="uk-table ">
+					<tr style='font-weight: bold;'>
+						<td>
+							目录/文件
+						</td>
+						<td>
+							所需权限
+						</td>
+						<td>
+							当前权限
+						</td>
+					</tr>
+					<volist name="data2" id="vo">
+						<tr>
+							<td>
+								{$vo.path}
+							</td>
+							<td>
+								{$vo.need}
+							</td>
+							<td>
+								<if condition="$vo.ok eq true " >
+									<img style='position:relative; top:-1px;' src='__PUBLIC__/Install/inco/G.png' />
+								<else/>
+									<img style='position:relative; top:-1px;' src='__PUBLIC__/Install/inco/X.png' />
+								</if>
+								
+								{$vo.now}
+							</td>
+						</tr>
+					</volist>
+				</table>
+				<p class=''><a class="uk-button uk-button-success " href="{:U('Index/index',array('step'=>3))}">下一步</a> <a class="uk-button uk-button-danger" href="{:U('Index/index',array('step'=>1))}">上一步</a></p>
+			</div>
+		</div>
+    </body>
+</html>

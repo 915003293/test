@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset='utf8'/>
+		<title>{$siteInfo.sitetitle}-发帖</title>
+		<meta name="description" content="{$siteInfo.sitedescribe}"> 
+		<meta name="keyword" content="{$siteInfo.sitekeyword}"> 
+		<link rel='stylesheet' type='text/css' href='__PUBLIC__/style//article.css'/>
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/style/wangEditor-2.1.18/dist/css/wangEditor.min.css">
+		<script type='text/javascript' src='__PUBLIC__/style//jquery-1.9.0.js' ></script>
+		<script type="text/javascript" src="__PUBLIC__/style/wangEditor-2.1.18/dist/js/wangEditor.min.js"></script>
+		<script type='text/javascript'>
+			$(function(){
+				var editor = new wangEditor('textarea1');
+				editor.create();
+				$('#submit').click(function(){
+				
+					 var formatText = editor.$txt.formatText();
+					console.info(formatText);
+				});
+
+			});
+		</script>
+	</head>
+	<body>
+	{$siteInfo.eval}
+		<div id='header'>
+			<div class='wrap add'>
+				<a href="{:U('index/index')}"}'><img src='__PUBLIC__/{$siteInfo.logo}'/></a>
+				<ul class='nav1'>
+					<li class='hover'>
+						<a href="{:U('index/index')}">首頁</a>
+					</li>
+					<li>
+						<a href="{:U('Article/post')}">新貼</a>
+					</li>
+				</ul>
+				<div class='right'>
+					<if condition="$user neq ''">
+						<span style='font-size:15px;'>欢迎回来:{$user}</span>
+						<a href="{:U('Login/unCookie')}">注销</a>
+					<else/>
+						<a href="{:U('Registered/index')}">註冊</a>
+						<a href="{:U('Login/index')}">登錄</a>
+					</if>
+				</div>
+			</div>
+		</div>
+		<div id='main'>
+			<div class='wrap'>
+				
+
+				<div class='box'>
+					<div class='title'>發帖</div>
+					<div class='content'>
+					<form action="{:U('Article/post')}" method='post' >
+					    
+							<select name='plate' style='font-size:15px;width:250px;padding:5px;'>
+								<volist name="postList" id="vo">
+									{$articleid}
+									<eq name="vo.id" value="$articleid">
+										<option selected value='{$vo.id}'>{$vo.title}</option>
+									<else/>
+										<option value='{$vo.id}'>{$vo.title}</option>
+									</eq>
+										
+								</volist>
+							<select>
+						<input  name='title' style='width:550px;padding:5px;margin-bottom:10px; font-size:15px;' placeholder='这里填写标题' type='text'/>
+						<textarea  name='text' style='height:550px;max-height:550px;' id="textarea1"></textarea>
+						<div><input style='padding:10px; margin-top:5px;' name='submit' type='submit' value='发帖' id = 'submit'></div>
+					</form>
+					</div>
+				</div>
+
+				<div class='box'>
+					<div class='title'>友情鏈接</div>
+					<div class='content'>
+						<if condition="$linkList eq null ">
+								暫時沒有友情鏈接
+						<else />
+							<volist name="linkList" id="vo" >
+								<span class='link'><a href='{$vo.link}'>{$vo.title} </a></span>
+							</volist>
+						</if>
+					</div>
+			</div>
+		</div>
+		<div id='footer'>
+							<p>管理员邮箱{$siteInfo.adminemail}</p>
+			<p>by:封建 基于thinkPHP框架的一个论坛 </p>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,95 @@
+<include file="Public/top" title = "find-权限管理" />
+        <!-- start left -->
+<include file="Public/left"/>
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+        <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2>权限管理</h2>
+                </div>
+                <div class="col-lg-2">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>权限列表</h5>
+
+                    </div>
+					<form action="{:U('Jurisdiction/handle')}" method='post'>
+					<input type='hidden'  name='method' value='rule' />
+                    <div class="ibox-content">
+						<volist name="topList" id="vo">
+							<div class="panel panel-primary">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+									<label class="checkbox-inline">
+										<input type='checkbox' class="moduleName" index="{$i}" len="0" />
+										<span data-toggle="collapse" data-toggle="collapse" data-parent="#accordionRule" href="#collapse{$i}">{$vo.modulename}</span></label>
+									</h4>
+								</div>
+								<if condition="$i eq 1 ">
+									<div id="collapse{$i}" class="panel-collapse collapse in" >
+											<div class="panel-body">
+												<foreach name="list" item="v">
+													<if condition="$v['mid'] eq $vo['id'] ">
+														<label class="checkbox-inline">
+															<input 	 type='checkbox' name="rule[]" label="group{$i}" value="{$v['id']}" /> {$v['title']}
+														</label>
+													</if>
+												</foreach>
+											</div>
+									</div>
+								<else />
+									<div id="collapse{$i}" class="panel-collapse collapse">
+											<div class="panel-body">
+												<foreach name="list" item="v">
+													<if condition="$v['mid'] eq $vo['id'] ">
+														<label class="checkbox-inline">
+															<input 	 type='checkbox' name="rule[]" label="group{$i}" value="{$v['id']}" /> {$v['title']}
+														</label>
+													</if>
+												</foreach>
+											</div>
+									</div>
+								</if>
+																
+								
+								
+								
+
+							</div>
+						</volist>	
+                    </div>
+					</form>
+                </div>
+            </div>
+            </div>
+                    <include file="Public/footer" />
+        </div>
+		<script>
+		$(function(){
+			$('input[index]').click(function(){
+						var n = $(this).attr('index');
+						if(this.checked){
+							$('input[label=group'+n+']').prop('checked',true);
+						}else{
+							$('input[label=group'+n+']').prop('checked',false);
+						}
+			});
+
+			var ids = {$ids}.split(',');
+			$("input[name='rule[]']").each(function(){
+					if($.inArray(this.value,ids)!= -1){	
+						$(this).prop('checked',true);
+						var number  =  $(this).attr('label').charAt(5);
+						var group   =  $('input[index='+number+']');
+						group.prop('checked',true);
+					
+					}
+			});
+			
+		})
+		</script>   
+
